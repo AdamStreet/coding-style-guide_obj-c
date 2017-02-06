@@ -302,17 +302,17 @@ the handler method.
         [[NSNotificationCenter defaultCenter] removeObserver:self];
     }
 
-#pragma mark - Notification handlers
+    #pragma mark - Notification handlers
 
-- (void)handleOtherClassDidSomethingNotification:(NSNotification *)notification
-{
-    // If we need this just once:
-    //[[NSNotificationCenter defaultCenter] removeObserver:self
-    //name:MYOtherClassDidSomethingNotification
-    //object:nil];
+    - (void)handleOtherClassDidSomethingNotification:(NSNotification *)notification
+    {
+        // If we need this just once:
+        //[[NSNotificationCenter defaultCenter] removeObserver:self
+        //name:MYOtherClassDidSomethingNotification
+        //object:nil];
 
-    ...
-}
+        ...
+    }
 
 > Use dedicated methods for handling a notification! Avoid to bind methods like _-clearTableView_.
 > The recommended naming is _-handle[notification_name_without_prefix]in[current_class_name_without_prefix]:_ and always add the 
@@ -449,7 +449,7 @@ MYBook.h
 
 [Macros are dangerous](http://stackoverflow.com/questions/14041453/why-are-preprocessor-macros-evil-and-what-are-the-alternatives) but those easily can be replaced with C functions.
 
-#define ADD(a, b) ...
+    #define ADD(a, b) ...
 
 Replace with:
 
